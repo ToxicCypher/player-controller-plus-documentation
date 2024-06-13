@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Character Controller Plus : Running State</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Character Controller Plus</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="131206.html">Character Controller Plus [Index]</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="State-Definitions_131196.html">State Definitions</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Character Controller Plus : Running State
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Cameron Gibson</span>, last modified on Apr 18, 2024
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <style type='text/css'>/*<![CDATA[*/
+div.rbtoc1718320058135 {padding: 0px;}
+div.rbtoc1718320058135 ul {list-style: none;margin-left: 0px;}
+div.rbtoc1718320058135 li {margin-left: 0px;padding-left: 0px;}
+
+/*]]>*/</style><div class='toc-macro rbtoc1718320058135'>
+<ul class='toc-indentation'>
+<li><a href='#RunningState-StateDetails'>State Details</a>
+<ul class='toc-indentation'>
+<li><a href='#RunningState-StateOverview'>State Overview</a></li>
+<li><a href='#RunningState-EntryRequirements'>Entry Requirements</a></li>
+</ul>
+</li>
+<li><a href='#RunningState-Parameters'>Parameters</a>
+<ul class='toc-indentation'>
+<li><a href='#RunningState-BaseStateParameters'>Base State Parameters</a></li>
+<li><a href='#RunningState-StateSpecificParameters'>State Specific Parameters</a></li>
+</ul>
+</li>
+<li><a href='#RunningState-GeneralUsage'>General Usage</a>
+<ul class='toc-indentation'>
+<li><a href='#RunningState-GroundedAdvancingEntry'>Grounded Advancing Entry</a></li>
+<li><a href='#RunningState-SkiddingEntry'>Skidding Entry</a></li>
+</ul>
+</li>
+</ul>
+</div><h1 id="RunningState-StateDetails">State Details</h1><h2 id="RunningState-StateOverview">State Overview</h2><p>This state is a general grounded state, supplying faster movement speed over the Walking state. This state is a particularly unique grounded state as this state is the only state that can transition to a Grounded Advance state as well as a Skidding state if so configured.</p><h2 id="RunningState-EntryRequirements">Entry Requirements</h2><p>This state can be entered only when grounded and when the players input is within the input thresholds required to enter the running state, provided in the Player Input System.</p><h1 id="RunningState-Parameters">Parameters</h1><div class="panel" style="background-color: #EAE6FF;border-color: #998DD9;border-width: 1px;"><div class="panelContent" style="background-color: #EAE6FF;">
+<p>All parameters listed below have detailed Tooltips in the Unity Editor.</p>
+</div></div><h3 id="RunningState-BaseStateParameters">Base State Parameters</h3><p>This state does not contain any state specific base state parameters.</p><h3 id="RunningState-StateSpecificParameters">State Specific Parameters</h3><p>This table defines configurable parameters that are utilized solely by this state.</p><div class="table-wrap"><table data-table-width="1382" data-layout="default" data-local-id="42844ded-fd04-45a2-9151-655070fb6892" class="confluenceTable"><colgroup><col style="width: 220.0px;"/><col style="width: 100.0px;"/><col style="width: 198.0px;"/><col style="width: 864.0px;"/></colgroup><tbody><tr><th class="confluenceTh"><p><strong>Parameter</strong></p></th><th class="confluenceTh"><p><strong>Data Type</strong></p></th><th class="confluenceTh"><p><strong>Header</strong></p></th><th class="confluenceTh"><p><strong>Details</strong></p></th></tr><tr><td class="confluenceTd"><p>Run Speed</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Movement Variables</p></td><td class="confluenceTd"><p>The movement speed applied in this state.</p></td></tr><tr><td class="confluenceTd"><p>Smooth Speed</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Movement Variables</p></td><td class="confluenceTd"><p>The movement smoothing speed applied in this state.</p></td></tr><tr><td class="confluenceTd"><p>Directional Smooth Speed</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Movement Variables</p></td><td class="confluenceTd"><p>The speed at which the players direction is smoothed.</p></td></tr><tr><td class="confluenceTd"><p>Jump Height From Running</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Jump Variables</p></td><td class="confluenceTd"><p>The jump height applied from this state.</p></td></tr><tr><td class="confluenceTd"><p>Jump Time From Running</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Jump Variables</p></td><td class="confluenceTd"><p>The jump duration applied from this state.</p></td></tr><tr><td class="confluenceTd"><p>Rotation Speed</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Rotation Variables</p></td><td class="confluenceTd"><p>The rotation speed applied in this state.</p></td></tr><tr><td class="confluenceTd"><p>Gravity</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Gravity Variables</p></td><td class="confluenceTd"><p>The gravity applied in this state.</p></td></tr><tr><td class="confluenceTd"><p>Gravity Multiplier</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Gravity Variables</p></td><td class="confluenceTd"><p>The gravity multiplier applied in this state.</p></td></tr><tr><td class="confluenceTd"><p>Grounded Advance Threshold</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Running Settings</p></td><td class="confluenceTd"><p>The speed at which the player must be moving for grounded advance to activate.</p></td></tr><tr><td class="confluenceTd"><p>Moderate Slope Smooth Speed</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Running Settings</p></td><td class="confluenceTd"><p>The speed at which movement speed will be slowed while traveling up a moderate slope.</p></td></tr><tr><td class="confluenceTd"><p>Skidding Directional Distance Threshold</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Running Settings</p></td><td class="confluenceTd"><p>The minimum distance between the target and current direction needed to enter a Skidding state.</p></td></tr><tr><td class="confluenceTd"><p>Skidding Speed Threshold</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Running Settings</p></td><td class="confluenceTd"><p>The minimum speed needed to enter a Skidding state.</p></td></tr></tbody></table></div><h1 id="RunningState-GeneralUsage">General Usage</h1><p>This section covers some general usage topics for this state.</p><h2 id="RunningState-GroundedAdvancingEntry">Grounded Advancing Entry</h2><p>The Grounded Advance state can only be entered from a Running state. To enter a the Grounded Advance state the player must provide Grounded Advance input to trigger the state, only when the players current speed meets or exceeds the Grounded Advance Threshold parameter.</p><p>Grounded Advance state transitions can be disabled by setting the Allow Grounded Advance parameter to false in the base state under the General Settings header.</p><h2 id="RunningState-SkiddingEntry">Skidding Entry</h2><p>The Skidding state can only be entered from a Running state. To enter a the Skidding state the players current speed must meets or exceed the Skidding Speed Threshold parameter, additionally, the player input while running must radically shift into a different direction, meeting or exceeding the Skidding Directional Distance Threshold parameter.</p><p>Skidding state transitions can be disabled by setting the Allow Skidding parameter to false in the base state under the General Settings header.</p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/12582978/12582985.png">image-20240329-232547.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/12582978/12582988.png">image-20240329-232558.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/12582978/12582991.png">Screenshot 2024-03-29 192705.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/12582978/12582994.png">image-20240329-233008.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/12582978/12582997.png">image-20240329-233102.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/12582978/12583000.png">image-20240329-233410.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/12582978/12583003.png">image-20240329-233512.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/12582978/12583006.png">image-20240329-233618.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/12582978/12583009.png">climb.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/12582978/12583012.png">params.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/12582978/12583015.png">climb2.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 13, 2024 19:07</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

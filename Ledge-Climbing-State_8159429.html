@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Character Controller Plus : Ledge Climbing State</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Character Controller Plus</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="131206.html">Character Controller Plus [Index]</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="State-Definitions_131196.html">State Definitions</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Character Controller Plus : Ledge Climbing State
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Cameron Gibson</span>, last modified on Apr 19, 2024
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <style type='text/css'>/*<![CDATA[*/
+div.rbtoc1718320097766 {padding: 0px;}
+div.rbtoc1718320097766 ul {list-style: none;margin-left: 0px;}
+div.rbtoc1718320097766 li {margin-left: 0px;padding-left: 0px;}
+
+/*]]>*/</style><div class='toc-macro rbtoc1718320097766'>
+<ul class='toc-indentation'>
+<li><a href='#LedgeClimbingState-StateDetails'>State Details</a>
+<ul class='toc-indentation'>
+<li><a href='#LedgeClimbingState-StateOverview'>State Overview</a></li>
+<li><a href='#LedgeClimbingState-EntryRequirements'>Entry Requirements</a></li>
+</ul>
+</li>
+<li><a href='#LedgeClimbingState-Parameters'>Parameters</a>
+<ul class='toc-indentation'>
+<li><a href='#LedgeClimbingState-BaseStateParameters'>Base State Parameters</a></li>
+<li><a href='#LedgeClimbingState-StateSpecificParameters'>State Specific Parameters</a></li>
+</ul>
+</li>
+</ul>
+</div><h1 id="LedgeClimbingState-StateDetails">State Details</h1><h2 id="LedgeClimbingState-StateOverview">State Overview</h2><p>The LedgeClimbing state is one of the two available states that can be entered when reaching the apex of a climb while in a Climbing state. This state is a more complex version of the ledge scaling states, allowing players to seemingly climb over the apex of a climbable surface, providing the illusion that player has scaled over the ledge.</p><p>This state will require parameter tweaking as well as careful animation design in-order to get the look and feel of this state just right for your project.</p><h2 id="LedgeClimbingState-EntryRequirements">Entry Requirements</h2><p>To enter the LedgeClimbing state, that player must currently be in a Climbing state while detecting the apex of a climb.</p><p>To specify whether or not the player enters a LedgeClimbing state rather than a LedgeJumping state, the Allow Ledge Climb parameter in the Climbing state settings must be set to true.</p><h1 id="LedgeClimbingState-Parameters">Parameters</h1><div class="panel" style="background-color: #EAE6FF;border-color: #998DD9;border-width: 1px;"><div class="panelContent" style="background-color: #EAE6FF;">
+<p>All parameters listed below have detailed Tooltips in the Unity Editor.</p>
+</div></div><h3 id="LedgeClimbingState-BaseStateParameters">Base State Parameters</h3><p>These state does not contain any state specific base state parameters.</p><h3 id="LedgeClimbingState-StateSpecificParameters">State Specific Parameters</h3><p>This table defines configurable parameters that are utilized solely by this state.</p><div class="table-wrap"><table data-table-width="1382" data-layout="default" data-local-id="42844ded-fd04-45a2-9151-655070fb6892" class="confluenceTable"><colgroup><col style="width: 220.0px;"/><col style="width: 100.0px;"/><col style="width: 198.0px;"/><col style="width: 864.0px;"/></colgroup><tbody><tr><th class="confluenceTh"><p><strong>Parameter</strong></p></th><th class="confluenceTh"><p><strong>Data Type</strong></p></th><th class="confluenceTh"><p><strong>Header</strong></p></th><th class="confluenceTh"><p><strong>Details</strong></p></th></tr><tr><td class="confluenceTd"><p>Ledge Climb Speed</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Movement Variables</p></td><td class="confluenceTd"><p>The speed at which the ledge climb is executed.</p></td></tr><tr><td class="confluenceTd"><p>Rotation Speed</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Rotation Variables</p></td><td class="confluenceTd"><p>The rotation speed applied in this state.</p></td></tr><tr><td class="confluenceTd"><p>Gravity</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Gravity Variables</p></td><td class="confluenceTd"><p>The gravity applied in this state.</p></td></tr><tr><td class="confluenceTd"><p>Gravity Multiplier</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Gravity Variables</p></td><td class="confluenceTd"><p>The gravity multiplier applied in this state.</p></td></tr></tbody></table></div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/8159429/8159436.png">climb2.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/8159429/8159439.png">params.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/8159429/8159442.png">climb.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/8159429/8159445.png">image-20240329-233618.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/8159429/8159448.png">image-20240329-233512.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/8159429/8159451.png">image-20240329-233410.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/8159429/8159454.png">image-20240329-233102.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/8159429/8159457.png">image-20240329-233008.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/8159429/8159460.png">Screenshot 2024-03-29 192705.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/8159429/8159463.png">image-20240329-232558.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/8159429/8159466.png">image-20240329-232547.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 13, 2024 19:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

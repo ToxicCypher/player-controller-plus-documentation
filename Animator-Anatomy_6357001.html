@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Character Controller Plus : Animator Anatomy</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Character Controller Plus</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="131206.html">Character Controller Plus [Index]</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Character Controller Plus : Animator Anatomy
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Cameron Gibson</span>, last modified on Apr 16, 2024
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <style type='text/css'>/*<![CDATA[*/
+div.rbtoc1718320118067 {padding: 0px;}
+div.rbtoc1718320118067 ul {list-style: none;margin-left: 0px;}
+div.rbtoc1718320118067 li {margin-left: 0px;padding-left: 0px;}
+
+/*]]>*/</style><div class='toc-macro rbtoc1718320118067'>
+<ul class='toc-indentation'>
+<li><a href='#AnimatorAnatomy-Summary'>Summary</a></li>
+<li><a href='#AnimatorAnatomy-AnimationLayers'>Animation Layers</a></li>
+<li><a href='#AnimatorAnatomy-AnimatorParameters'>Animator Parameters</a></li>
+<li><a href='#AnimatorAnatomy-AnimatorSub-StateMachines'>Animator Sub-State Machines</a>
+<ul class='toc-indentation'>
+<li><a href='#AnimatorAnatomy-BaseStateMachine'>Base State Machine</a></li>
+<li><a href='#AnimatorAnatomy-GroundedMobileSub-StateMachine'>Grounded Mobile Sub-State Machine</a></li>
+<li><a href='#AnimatorAnatomy-GroundedImmobileSub-StateMachine'>Grounded Immobile Sub-State Machine</a></li>
+<li><a href='#AnimatorAnatomy-AquaticSub-StateMachine'>Aquatic Sub-State Machine</a></li>
+<li><a href='#AnimatorAnatomy-AirborneSub-StateMachine'>Airborne Sub-State Machine</a></li>
+<li><a href='#AnimatorAnatomy-ScalingSub-StateMachine'>Scaling Sub-State Machine</a></li>
+</ul>
+</li>
+<li><a href='#AnimatorAnatomy-UpdatingAnimatorTransitions'>Updating Animator Transitions</a>
+<ul class='toc-indentation'>
+<li><a href='#AnimatorAnatomy-Summary.1'>Summary</a></li>
+</ul>
+</li>
+<li><a href='#AnimatorAnatomy-UpdatingAnimatorParameters'>Updating Animator Parameters</a>
+<ul class='toc-indentation'>
+<li><a href='#AnimatorAnatomy-Introduction'>Introduction</a></li>
+<li><a href='#AnimatorAnatomy-UpdatingParameters'>Updating Parameters</a></li>
+</ul>
+</li>
+</ul>
+</div><h1 id="AnimatorAnatomy-Summary">Summary</h1><p>A fully built-out <strong>Animator </strong>mecanim has been created to manage animation transitions for you from the get go. The animator can be adjusted however you feel fit for your needs but it is important to keep the transitions intact as to not break any state transitions assuming your character is destined for the animation state in question.</p><h1 id="AnimatorAnatomy-AnimationLayers">Animation Layers</h1><p>The provided <strong>Animator </strong>component only contains a single <strong>Base Layer</strong>.</p><h1 id="AnimatorAnatomy-AnimatorParameters">Animator Parameters</h1><div class="confluence-information-macro confluence-information-macro-note"><span class="aui-icon aui-icon-small aui-iconfont-warning confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><strong>Animator </strong>Parameter names are not to be updated as they are referenced in code when state transitions occur. If you are interested in making changes, removals or additions to the <strong>Animator </strong>parameters, please see the Updating Animation Parameters section below.</p></div></div><p>The provided <strong>Animator </strong>uses only Boolean values which are used to transition between states. These values allow the Character Controller Plus State Machine to treat the Animator as an extension of the Character Controller Plus State Machine. </p><p>This is accomplished by setting the relative state Boolean value to true when entering a particular state and setting the value to false when exiting the state.</p><h1 id="AnimatorAnatomy-AnimatorSub-StateMachines">Animator Sub-State Machines</h1><div class="panel" style="background-color: #EAE6FF;border-color: #998DD9;border-width: 1px;"><div class="panelContent" style="background-color: #EAE6FF;">
+<p>This section describes briefly the functionality behind each of the <strong>Animator Sub-State Machines</strong>.</p>
+</div></div><h3 id="AnimatorAnatomy-BaseStateMachine">Base State Machine</h3><p>The base state machine is simply an in-between for all of the Sub-State Machines.</p><span class="confluence-embedded-file-wrapper image-left-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-left" alt="image-20240407-202814.png" width="506" loading="lazy" src="attachments/6357001/8224776.png?width=506" data-image-src="attachments/6357001/8224776.png" data-height="457" data-width="809" data-unresolved-comment-count="0" data-linked-resource-id="8224776" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240407-202814.png" data-base-url="https://toxiccyphergames.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="6357001" data-linked-resource-container-version="9" data-media-id="27746f15-f41a-4574-a7ce-8e9eb50ccf2b" data-media-type="file"></span><h3 id="AnimatorAnatomy-GroundedMobileSub-StateMachine">Grounded Mobile Sub-State Machine</h3><p>The grounded sub-state machine drives grounded movement, such as idle, walking, running, etc.</p><span class="confluence-embedded-file-wrapper image-left-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-left" alt="image-20240407-202932.png" width="507" loading="lazy" src="attachments/6357001/7929879.png?width=507" data-image-src="attachments/6357001/7929879.png" data-height="419" data-width="1007" data-unresolved-comment-count="0" data-linked-resource-id="7929879" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240407-202932.png" data-base-url="https://toxiccyphergames.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="6357001" data-linked-resource-container-version="9" data-media-id="c6a5086b-e293-476e-8292-02d4014d9e4d" data-media-type="file"></span><h3 id="AnimatorAnatomy-GroundedImmobileSub-StateMachine">Grounded Immobile Sub-State Machine</h3><p>The grounded immobile sub-state machine drives grounded movement, especially when the control of the payer is limited in some fashion.</p><span class="confluence-embedded-file-wrapper image-left-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-left" alt="image-20240407-203014.png" width="506" loading="lazy" src="attachments/6357001/8224783.png?width=506" data-image-src="attachments/6357001/8224783.png" data-height="665" data-width="1240" data-unresolved-comment-count="0" data-linked-resource-id="8224783" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240407-203014.png" data-base-url="https://toxiccyphergames.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="6357001" data-linked-resource-container-version="9" data-media-id="ab941e94-d1be-4878-adb0-619fea728f5e" data-media-type="file"></span><h3 id="AnimatorAnatomy-AquaticSub-StateMachine">Aquatic Sub-State Machine</h3><p>The aquatic sub-state machine drives aquatic movement such as swimming and diving.</p><span class="confluence-embedded-file-wrapper image-left-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-left" alt="image-20240407-203045.png" width="506" loading="lazy" src="attachments/6357001/7929887.png?width=506" data-image-src="attachments/6357001/7929887.png" data-height="664" data-width="807" data-unresolved-comment-count="0" data-linked-resource-id="7929887" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240407-203045.png" data-base-url="https://toxiccyphergames.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="6357001" data-linked-resource-container-version="9" data-media-id="bb31ded8-f9f1-4f96-8474-b030d2fdca34" data-media-type="file"></span><h3 id="AnimatorAnatomy-AirborneSub-StateMachine">Airborne Sub-State Machine</h3><p>The airborne sub-state machine drives non-grounded movement, such as jumping and falling.</p><span class="confluence-embedded-file-wrapper image-left-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-left" alt="image-20240407-203123.png" width="506" loading="lazy" src="attachments/6357001/7929893.png?width=506" data-image-src="attachments/6357001/7929893.png" data-height="510" data-width="1349" data-unresolved-comment-count="0" data-linked-resource-id="7929893" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240407-203123.png" data-base-url="https://toxiccyphergames.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="6357001" data-linked-resource-container-version="9" data-media-id="243b1b8b-cd4b-4f18-b1c4-fba64aed2be0" data-media-type="file"></span><h3 id="AnimatorAnatomy-ScalingSub-StateMachine">Scaling Sub-State Machine</h3><p>The scaling sub-state machine drives climbing movement.</p><span class="confluence-embedded-file-wrapper image-left-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-left" alt="image-20240407-203200.png" width="506" loading="lazy" src="attachments/6357001/7995439.png?width=506" data-image-src="attachments/6357001/7995439.png" data-height="481" data-width="1212" data-unresolved-comment-count="0" data-linked-resource-id="7995439" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240407-203200.png" data-base-url="https://toxiccyphergames.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="6357001" data-linked-resource-container-version="9" data-media-id="2acaa0c2-8d9f-41e5-8a92-6a96cd8a11af" data-media-type="file"></span><h1 id="AnimatorAnatomy-UpdatingAnimatorTransitions">Updating Animator Transitions</h1><h3 id="AnimatorAnatomy-Summary.1">Summary</h3><p><strong>Animator </strong>transitions can be manipulated to suit your needs to reflect transitions that are more suitable for you and your character. The available parameters are detailed further in <a class="external-link" href="https://docs.unity3d.com/Manual/class-Animator.html" rel="nofollow">Unity’s Animator documentation</a>. For more information on how to integrate new <strong>Animator </strong>transitions into <u>Character Controller Plus,</u> please view the <a href="Creating-Custom-States_10813474.html" data-linked-resource-id="10813474" data-linked-resource-version="5" data-linked-resource-type="page">Creating Custom States</a> section.</p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="image-20240416-235618.png" width="760" loading="lazy" src="attachments/6357001/10846216.png?width=760" data-image-src="attachments/6357001/10846216.png" data-height="568" data-width="1351" data-unresolved-comment-count="0" data-linked-resource-id="10846216" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240416-235618.png" data-base-url="https://toxiccyphergames.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="6357001" data-linked-resource-container-version="9" data-media-id="89df2b23-9d2d-4af1-84c4-43475855b5c2" data-media-type="file"></span><h1 id="AnimatorAnatomy-UpdatingAnimatorParameters">Updating Animator Parameters</h1><h3 id="AnimatorAnatomy-Introduction">Introduction</h3><p><strong>Animator </strong>parameters may be updated, whether it be by changing the names of <strong>Animator </strong>parameters, adding them and/or removing them. When manipulating <strong>Animator </strong>parameters, it is imperative that the names of the changed <strong>Animator </strong>parameters are also reflected in the <u>Character Controller Plus</u> code base.</p><h3 id="AnimatorAnatomy-UpdatingParameters">Updating Parameters</h3><p>To reflect the changes made to any <strong>Animator </strong>parameters, developers can dive into the code base and navigate to the <code>PlayerAnimationMap.cs</code> class, located at <code>../Character Controller Plus/Demo Character/Scripts/State Manager/State Manager Parameter Store</code> directory, relative to the project root.</p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="image-20240416-231944.png" width="760" loading="lazy" src="attachments/6357001/10813459.png?width=760" data-image-src="attachments/6357001/10813459.png" data-height="505" data-width="1705" data-unresolved-comment-count="0" data-linked-resource-id="10813459" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240416-231944.png" data-base-url="https://toxiccyphergames.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="6357001" data-linked-resource-container-version="9" data-media-id="b1279af3-8133-49a3-bd61-cda888a79d3a" data-media-type="file"></span><p>Here you can find all of the <strong>Animator </strong>parameters which are assigned to static variables as to provide easily accessible data to relative state modules.</p><p>To reflect any changes, additions or deletions to your <strong>Animator </strong>parameters, simply add, remove or update the parameter that is targeting the state at which you aim to change. Additional parameters may be added if the developer so chooses to create additional custom states. For more information on how to integrate new <strong>Animator </strong>parameters into <u>Character Controller Plus,</u> please view the <a href="Creating-Custom-States_10813474.html" data-linked-resource-id="10813474" data-linked-resource-version="5" data-linked-resource-type="page">Creating Custom States</a> section.</p><p />
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/6357001/6389811.png">image-20240330-041648.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/6357001/6422571.png">image-20240330-041718.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/6357001/6389817.png">image-20240330-041736.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/6357001/6389823.png">image-20240330-041754.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/6357001/6455334.png">image-20240330-041812.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/6357001/6455341.png">image-20240330-041829.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/6357001/6389829.png">image-20240330-041845.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/6357001/7995415.png">image-20240407-202702.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/6357001/7995423.png">image-20240407-202726.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/6357001/8192026.png">image-20240407-202730.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/6357001/8224776.png">image-20240407-202814.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/6357001/7929879.png">image-20240407-202932.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/6357001/8224783.png">image-20240407-203014.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/6357001/7929887.png">image-20240407-203045.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/6357001/7929893.png">image-20240407-203123.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/6357001/7995439.png">image-20240407-203200.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/6357001/10813459.png">image-20240416-231944.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/6357001/10846216.png">image-20240416-235618.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 13, 2024 19:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>
