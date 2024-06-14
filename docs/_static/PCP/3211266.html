@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Character Controller Plus : Hand &amp; Arm Inverse Kinematics (IK)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Character Controller Plus</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="131206.html">Character Controller Plus [Index]</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="524293.html">Inverse Kinematics (IK)</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Character Controller Plus : Hand &amp; Arm Inverse Kinematics (IK)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Cameron Gibson</span>, last modified on Apr 17, 2024
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <style type='text/css'>/*<![CDATA[*/
+div.rbtoc1718320110331 {padding: 0px;}
+div.rbtoc1718320110331 ul {list-style: none;margin-left: 0px;}
+div.rbtoc1718320110331 li {margin-left: 0px;padding-left: 0px;}
+
+/*]]>*/</style><div class='toc-macro rbtoc1718320110331'>
+<ul class='toc-indentation'>
+<li><a href='#Hand&amp;ArmInverseKinematics(IK)-Overview'>Overview</a>
+<ul class='toc-indentation'>
+<li><a href='#Hand&amp;ArmInverseKinematics(IK)-Limitations'>Limitations</a></li>
+<li><a href='#Hand&amp;ArmInverseKinematics(IK)-ProvidedFeature'>Provided Feature</a></li>
+</ul>
+</li>
+<li><a href='#Hand&amp;ArmInverseKinematics(IK)-Hand&amp;ArmIKParameters'>Hand &amp; Arm IK Parameters</a></li>
+<li><a href='#Hand&amp;ArmInverseKinematics(IK)-HierarchicalRequirements'>Hierarchical Requirements</a></li>
+<li><a href='#Hand&amp;ArmInverseKinematics(IK)-GameObjects&amp;Components'>Game Objects &amp; Components</a>
+<ul class='toc-indentation'>
+<li><a href='#Hand&amp;ArmInverseKinematics(IK)-CharacterRootComponents'>Character Root Components</a>
+<ul class='toc-indentation'>
+<li><a href='#Hand&amp;ArmInverseKinematics(IK)-RigBuilder'>Rig Builder</a></li>
+<li><a href='#Hand&amp;ArmInverseKinematics(IK)-BoneRenderer[Optional]'>Bone Renderer [Optional]</a></li>
+</ul>
+</li>
+<li><a href='#Hand&amp;ArmInverseKinematics(IK)-NestedGameObjects'>Nested Game Objects</a>
+<ul class='toc-indentation'>
+<li><a href='#Hand&amp;ArmInverseKinematics(IK)-ArmRig'>Arm Rig</a></li>
+<li><a href='#Hand&amp;ArmInverseKinematics(IK)-Left|RightArm'>Left | Right Arm</a></li>
+<li><a href='#Hand&amp;ArmInverseKinematics(IK)-Left|RightArmTarget'>Left | Right Arm Target</a></li>
+<li><a href='#Hand&amp;ArmInverseKinematics(IK)-Left|RightArmHint'>Left | Right Arm Hint</a></li>
+<li><a href='#Hand&amp;ArmInverseKinematics(IK)-Left|RightController'>Left | Right Controller</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><h1 id="Hand&amp;ArmInverseKinematics(IK)-Overview">Overview</h1><h3 id="Hand&amp;ArmInverseKinematics(IK)-Limitations">Limitations</h3><div class="confluence-information-macro confluence-information-macro-note"><span class="aui-icon aui-icon-small aui-iconfont-warning confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>The Rig provided in the <u>Character Controller Plus</u> package does not adhere to the Rig requirements needed for Hand &amp; Arm IK to work properly.</p></div></div><p>Hand &amp; Arm IK is a preview process as this feature contains limitations that may deem this feature not suitable to the nature of your Rig. That being said, use this feature with caution as unintended results are expected. </p><p>While under development, I have found that using <strong>Mixamo </strong>generated Rigs are suitable for use of the Hand &amp; Arm IK feature, possible to the nature of the Rig and its bone rotation. </p><h3 id="Hand&amp;ArmInverseKinematics(IK)-ProvidedFeature">Provided Feature</h3><div class="panel" style="background-color: #EAE6FF;border-color: #998DD9;border-width: 1px;"><div class="panelContent" style="background-color: #EAE6FF;">
+<p>This feature is particularly designed for states such as Idle, Walking, Running, Crouching and Crouch Walking.</p>
+</div></div><p>The Hand &amp; Arm IK rig allows the player to detect surfaces as the player nears them. The player will reach their hand towards the location of the detected surface while rotating the hand towards the surface of the detected object. </p><p>Hand IK is highly configurable and many adjustments can be made to suit the needs of your character to provide the level of inverse kinematics that best suits your project needs. Please see the Hand &amp; Arm IK Parameters section for more information regarding the available configuration.</p><h1 id="Hand&amp;ArmInverseKinematics(IK)-Hand&amp;ArmIKParameters">Hand &amp; Arm IK Parameters</h1><div class="table-wrap"><table data-table-width="1011" data-layout="default" data-local-id="082d92b5-ad0e-4747-995e-0eda89df58fe" class="confluenceTable"><colgroup><col style="width: 177.0px;"/><col style="width: 205.0px;"/><col style="width: 626.0px;"/></colgroup><tbody><tr><th class="confluenceTh"><p><strong>Parameter</strong></p></th><th class="confluenceTh"><p><strong>Header</strong></p></th><th class="confluenceTh"><p><strong>Details</strong></p></th></tr><tr><td class="confluenceTd"><p>Hand Two Bone IK</p></td><td class="confluenceTd"><p>IK Components</p></td><td class="confluenceTd"><p>The Two Bone IK Constraint component attached to the relevant arm.</p></td></tr><tr><td class="confluenceTd"><p>Hand Multi Rotation</p></td><td class="confluenceTd"><p>IK Components</p></td><td class="confluenceTd"><p>The Multi Rotation Constraint component attached to the relevant arm.</p></td></tr><tr><td class="confluenceTd"><p>Target</p></td><td class="confluenceTd"><p>IK Components</p></td><td class="confluenceTd"><p>A reference to the &lt;Lateral&gt; Arm_target object for the relevant arm.</p></td></tr><tr><td class="confluenceTd"><p>Origins</p></td><td class="confluenceTd"><p>Raycast Components</p></td><td class="confluenceTd"><p>A list of raycast origins, the origin provided is relative to the position of the Game Object this script is attached to. (This list length must be equal to the directions list length)</p></td></tr><tr><td class="confluenceTd"><p>Directions</p></td><td class="confluenceTd"><p>Raycast Components</p></td><td class="confluenceTd"><p>A list of raycast direction. (This list length must be equal to the origins list length)</p></td></tr><tr><td class="confluenceTd"><p>Layers</p></td><td class="confluenceTd"><p>Raycast Components</p></td><td class="confluenceTd"><p>Objects within the selected layers can be used to detect IK positioning.</p></td></tr><tr><td class="confluenceTd"><p>Distance</p></td><td class="confluenceTd"><p>Raycast Components</p></td><td class="confluenceTd"><p>Scaled distance from the player that can detect surfaces within the allowed layers.</p></td></tr><tr><td class="confluenceTd"><p>Y Scale</p></td><td class="confluenceTd"><p>Raycast Components</p></td><td class="confluenceTd"><p>Scales the Raycasts hit point up by the specified factor. This value can be used to raise hands off of hit points to account for varying hand sizes, shapes, types.</p></td></tr><tr><td class="confluenceTd"><p>Apply IK In States</p></td><td class="confluenceTd"><p>IK Settings</p></td><td class="confluenceTd"><p>The states that IK will be performed on this constraint.</p></td></tr><tr><td class="confluenceTd"><p>Hand Rotation Speed</p></td><td class="confluenceTd"><p>IK Properties</p></td><td class="confluenceTd"><p>The speed at which the IK target is rotated.</p></td></tr><tr><td class="confluenceTd"><p>Positioning Speed</p></td><td class="confluenceTd"><p>IK Properties</p></td><td class="confluenceTd"><p>The speed at which IK targeting occurs.</p></td></tr><tr><td class="confluenceTd"><p>Depositioning Speed</p></td><td class="confluenceTd"><p>IK Properties</p></td><td class="confluenceTd"><p>The speed at which IK targeting is dissolved.</p></td></tr><tr><td class="confluenceTd"><p>Initial Weight</p></td><td class="confluenceTd"><p>IK Properties</p></td><td class="confluenceTd"><p>The starting weight of the IK rig.</p></td></tr><tr><td class="confluenceTd"><p>Target Weight</p></td><td class="confluenceTd"><p>IK Properties</p></td><td class="confluenceTd"><p>The target weight of the IK rig when a surface that can be used for IK is detected.</p></td></tr><tr><td class="confluenceTd"><p>Debug</p></td><td class="confluenceTd"><p>Debug Settings</p></td><td class="confluenceTd"><p>Flags debug mode, showing raycasts in the game view.</p></td></tr></tbody></table></div><h1 id="Hand&amp;ArmInverseKinematics(IK)-HierarchicalRequirements">Hierarchical Requirements</h1><p>The Animation Rigging package from Unity requires that the Rig components be nested under the same parent as the Rig game object, see image below.</p><span class="confluence-embedded-file-wrapper image-left-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-left" alt="image-20240418-011216.png" width="443" loading="lazy" src="attachments/3211266/11730946.png?width=443" data-image-src="attachments/3211266/11730946.png" data-height="177" data-width="330" data-unresolved-comment-count="0" data-linked-resource-id="11730946" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240418-011216.png" data-base-url="https://toxiccyphergames.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="3211266" data-linked-resource-container-version="13" data-media-id="82b98719-b453-410c-b39b-35fb54a48c59" data-media-type="file"></span><h1 id="Hand&amp;ArmInverseKinematics(IK)-GameObjects&amp;Components">Game Objects &amp; Components</h1><h3 id="Hand&amp;ArmInverseKinematics(IK)-CharacterRootComponents">Character Root Components</h3><h4 id="Hand&amp;ArmInverseKinematics(IK)-RigBuilder">Rig Builder</h4><p>The <strong>Rig Builder</strong> object is a component added to the root Game Object which is used to define which Rig Layers are active. In-order for Arm IK to function, the Arm Rig Game Object must be supplied to the list of Rig Layers.</p><p> </p><h4 id="Hand&amp;ArmInverseKinematics(IK)-BoneRenderer[Optional]">Bone Renderer [Optional]</h4><p>The <strong>Bone Renderer</strong> component is used to display the character Rig, which allows for Rig components to become selectable within the Scene view.</p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="image-20240417-003548.png" width="760" loading="lazy" src="attachments/3211266/11403310.png?width=760" data-image-src="attachments/3211266/11403310.png" data-height="591" data-width="851" data-unresolved-comment-count="0" data-linked-resource-id="11403310" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240417-003548.png" data-base-url="https://toxiccyphergames.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="3211266" data-linked-resource-container-version="13" data-media-id="43ac3744-0ac2-4778-a810-865b2bd3700d" data-media-type="file"></span><h3 id="Hand&amp;ArmInverseKinematics(IK)-NestedGameObjects">Nested Game Objects</h3><h4 id="Hand&amp;ArmInverseKinematics(IK)-ArmRig">Arm Rig</h4><p>Arm Rig is the root component for the Hand &amp; Arm IK system. There is little to no significance here besides the fact that this Game Object is the parent to the remaining Hand &amp; Arm IK Game Objects. The Rig component attached to this Game Object should remain at a weight of 1 as this value is not manipulated in any way by the Hand &amp; Arm IK system and changing the value may result in degraded IK results.</p><p> </p><h4 id="Hand&amp;ArmInverseKinematics(IK)-Left|RightArm">Left | Right Arm</h4><p>Each arms remaining components are divided into two sections, one for the left arm and another for the right arm. This component contains a Two Bone IK Constraint component which has already been prepared for the current Rig. The Tip, Mid and Root parameters will need to be updated if/when the Rig is ever changed.</p><p>If the Rig is changed, you can quickly configure the Two Bone IK Constraint component by providing a value for the Tip parameter, right clicking on the header of the Two Bone IK Constraint component and selecting the “Auto Setup from Tip Transform option”. Doing this will automatically fill in the remaining bone transforms.</p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="image-20240418-004852.png" width="493" loading="lazy" src="attachments/3211266/11501613.png?width=493" data-image-src="attachments/3211266/11501613.png" data-height="312" data-width="493" data-unresolved-comment-count="0" data-linked-resource-id="11501613" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240418-004852.png" data-base-url="https://toxiccyphergames.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="3211266" data-linked-resource-container-version="13" data-media-id="66d02107-5289-49f4-a505-1e752865e9ad" data-media-type="file"></span><p>This component also contains a Multi-Rotation Constraint which is responsible for handling the rotation of the source object or in this case, the Left | Right Arm_target.</p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="image-20240418-005115.png" width="493" loading="lazy" src="attachments/3211266/11534369.png?width=493" data-image-src="attachments/3211266/11534369.png" data-height="289" data-width="493" data-unresolved-comment-count="0" data-linked-resource-id="11534369" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240418-005115.png" data-base-url="https://toxiccyphergames.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="3211266" data-linked-resource-container-version="13" data-media-id="f7652de0-09b2-47d7-b6e7-3035cf00b401" data-media-type="file"></span><p /><h4 id="Hand&amp;ArmInverseKinematics(IK)-Left|RightArmTarget">Left | Right Arm Target</h4><p>The arm target is used to tell the player Rig where to place it’s hand. Adjust the location of this game object to sit within the reach of the arms of the character. The decided position will dictate the location and distance that the player will reach their hands out to. </p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="image-20240418-005526.png" width="760" loading="lazy" src="attachments/3211266/11534376.png?width=760" data-image-src="attachments/3211266/11534376.png" data-height="536" data-width="1191" data-unresolved-comment-count="0" data-linked-resource-id="11534376" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240418-005526.png" data-base-url="https://toxiccyphergames.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="3211266" data-linked-resource-container-version="13" data-media-id="b393845b-5834-4f5d-a2b8-de43a05dda6a" data-media-type="file"></span><p /><h4 id="Hand&amp;ArmInverseKinematics(IK)-Left|RightArmHint">Left | Right Arm Hint</h4><p>The arm hint is simply used to help guide the direction that the elbows should move towards when the arms are bending as a result of Arm IK activity.</p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="image-20240418-010348.png" width="760" loading="lazy" src="attachments/3211266/11239454.png?width=760" data-image-src="attachments/3211266/11239454.png" data-height="539" data-width="1195" data-unresolved-comment-count="0" data-linked-resource-id="11239454" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240418-010348.png" data-base-url="https://toxiccyphergames.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="3211266" data-linked-resource-container-version="13" data-media-id="bb60fac8-6592-4563-a6fc-e7f3c51edb08" data-media-type="file"></span><p> </p><h4 id="Hand&amp;ArmInverseKinematics(IK)-Left|RightController">Left | Right Controller</h4><p>The Controller object is what drives the core functionality of the Hand &amp; Arm IK system. The controller should be positioned under the bicep and to the side of the peck.</p><p>The positioning of the Controller Game Object is crucial to the accuracy of your Hand &amp; Arm IK setup. This is due to the fact that the raycasts that detect when Hand &amp; Arm IK should be active, originate from this object. The number of raycasts, origins of raycasts and directions of raycasts can be manipulated directly from the Hand IK Controller component by providing equal parts Origins and Directions vectors.</p><p /><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="image-20240418-010955.png" width="496" loading="lazy" src="attachments/3211266/11305006.png?width=496" data-image-src="attachments/3211266/11305006.png" data-height="301" data-width="496" data-unresolved-comment-count="0" data-linked-resource-id="11305006" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240418-010955.png" data-base-url="https://toxiccyphergames.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="3211266" data-linked-resource-container-version="13" data-media-id="f600b990-f427-459a-b81d-2607e7c56a8b" data-media-type="file"></span><p /><p> This object contains a script which houses the configuration for how users would like the Arm IK system to behave. For more information regarding these parameters, please see the Arm IK Parameters section.</p><p /><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="image-20240418-010703.png" width="730" loading="lazy" src="attachments/3211266/11239460.png?width=730" data-image-src="attachments/3211266/11239460.png" data-height="487" data-width="730" data-unresolved-comment-count="0" data-linked-resource-id="11239460" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240418-010703.png" data-base-url="https://toxiccyphergames.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="3211266" data-linked-resource-container-version="13" data-media-id="46e25fb9-ba44-4aa8-adf5-bee62b41f769" data-media-type="file"></span><p /><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="image-20240418-010502.png" width="493" loading="lazy" src="attachments/3211266/11534383.png?width=493" data-image-src="attachments/3211266/11534383.png" data-height="752" data-width="493" data-unresolved-comment-count="0" data-linked-resource-id="11534383" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240418-010502.png" data-base-url="https://toxiccyphergames.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="3211266" data-linked-resource-container-version="13" data-media-id="36d380da-dedd-4743-bb83-726684cf7bc7" data-media-type="file"></span><p />
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/3211266/11501613.png">image-20240418-004852.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/3211266/11534363.png">image-20240418-005110.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/3211266/11534369.png">image-20240418-005115.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/3211266/11403293.png">image-20240418-005515.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/3211266/11304997.png">image-20240418-005523.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/3211266/11534376.png">image-20240418-005526.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/3211266/11272217.png">image-20240418-010345.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/3211266/11239454.png">image-20240418-010348.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/3211266/11534383.png">image-20240418-010502.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/3211266/11239460.png">image-20240418-010703.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/3211266/11305006.png">image-20240418-010955.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/3211266/11403304.png">image-20240417-004617.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/3211266/11403310.png">image-20240417-003548.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/3211266/11730946.png">image-20240418-011216.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 13, 2024 19:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>
