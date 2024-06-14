@@ -4,20 +4,20 @@ Welcome to the Character Controller Plus documentation where setup, extensibilit
 
 ### Knowledge Base
 
-*   [Package Contents](Package-Contents.md)
+*   [Package Contents](Package_Contents/Package-Contents.md)
     
-*   [State Definitions](State-Definitions.md)
+*   [State Definitions](State_Definitions/State-Definitions.md)
     
-*   [Creating Custom States](Creating-Custom-States.md)
+*   [Creating Custom States](Creating_Custom_States/Creating-Custom-States.md)
     
-*   [Accessing CCP Data Externally](Accessing-CCP-Data-Externally.md)
+*   [Accessing CCP Data Externally](Accessing_CCP_Data_Externally/Accessing-CCP-Data-Externally.md)
     
-*   [Changing Characters](Changing-Characters.md)
+*   [Changing Characters](Changing_Characters/Changing-Characters.md)
     
-*   [Inverse Kinematics (IK) Setup](IK-System.md)
+*   [Inverse Kinematics (IK) Setup](Inverse_Kinematics/IK-System.md)
     
-*   [Package Dependencies](Package-Dependencies.md)
+*   [Package Dependencies](Package_Dependencies/Package-Dependencies.md)
     
-*   [Animator Anatomy](Animator-Anatomy.md)
+*   [Animator Anatomy](Animator_Anatomy/Animator-Anatomy.md)
     
-*   [Default Input System Mappings](Default-Input-System-Mappings.md)
+*   [Default Input System Mappings](Default_Input_System_Mappings/Default-Input-System-Mappings.md)
