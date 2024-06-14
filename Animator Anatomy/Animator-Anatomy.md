@@ -1,4 +1,3 @@
-/\*<!\[CDATA\[\*/ div.rbtoc1718320118067 {padding: 0px;} div.rbtoc1718320118067 ul {list-style: none;margin-left: 0px;} div.rbtoc1718320118067 li {margin-left: 0px;padding-left: 0px;} /\*\]\]>\*/
 
 *   [Summary](#AnimatorAnatomy-Summary)
 *   [Animation Layers](#AnimatorAnatomy-AnimationLayers)
@@ -44,37 +43,37 @@ This section describes briefly the functionality behind each of the **Animator S
 
 The base state machine is simply an in-between for all of the Sub-State Machines.
 
-![image-20240407-202814.png](attachments/6357001/8224776.png?width=506)
+![image-20240407-202814.png](../docutils/attachments//6357001/8224776.png?width=506)
 
 ### Grounded Mobile Sub-State Machine
 
 The grounded sub-state machine drives grounded movement, such as idle, walking, running, etc.
 
-![image-20240407-202932.png](attachments/6357001/7929879.png?width=507)
+![image-20240407-202932.png](../docutils/attachments//6357001/7929879.png?width=507)
 
 ### Grounded Immobile Sub-State Machine
 
 The grounded immobile sub-state machine drives grounded movement, especially when the control of the payer is limited in some fashion.
 
-![image-20240407-203014.png](attachments/6357001/8224783.png?width=506)
+![image-20240407-203014.png](../docutils/attachments//6357001/8224783.png?width=506)
 
 ### Aquatic Sub-State Machine
 
 The aquatic sub-state machine drives aquatic movement such as swimming and diving.
 
-![image-20240407-203045.png](attachments/6357001/7929887.png?width=506)
+![image-20240407-203045.png](../docutils/attachments//6357001/7929887.png?width=506)
 
 ### Airborne Sub-State Machine
 
 The airborne sub-state machine drives non-grounded movement, such as jumping and falling.
 
-![image-20240407-203123.png](attachments/6357001/7929893.png?width=506)
+![image-20240407-203123.png](../docutils/attachments//6357001/7929893.png?width=506)
 
 ### Scaling Sub-State Machine
 
 The scaling sub-state machine drives climbing movement.
 
-![image-20240407-203200.png](attachments/6357001/7995439.png?width=506)
+![image-20240407-203200.png](../docutils/attachments//6357001/7995439.png?width=506)
 
 Updating Animator Transitions
 =============================
@@ -83,7 +82,7 @@ Updating Animator Transitions
 
 **Animator** transitions can be manipulated to suit your needs to reflect transitions that are more suitable for you and your character. The available parameters are detailed further in [Unity’s Animator documentation](https://docs.unity3d.com/Manual/class-Animator.md). For more information on how to integrate new **Animator** transitions into Character Controller Plus, please view the [Creating Custom States](Creating-Custom-States_10813474.md) section.
 
-![image-20240416-235618.png](attachments/6357001/10846216.png?width=760)
+![image-20240416-235618.png](../docutils/attachments//6357001/10846216.png?width=760)
 
 Updating Animator Parameters
 ============================
@@ -96,7 +95,7 @@ Updating Animator Parameters
 
 To reflect the changes made to any **Animator** parameters, developers can dive into the code base and navigate to the `PlayerAnimationMap.cs` class, located at `../Character Controller Plus/Demo Character/Scripts/State Manager/State Manager Parameter Store` directory, relative to the project root.
 
-![image-20240416-231944.png](attachments/6357001/10813459.png?width=760)
+![image-20240416-231944.png](../docutils/attachments//6357001/10813459.png?width=760)
 
 Here you can find all of the **Animator** parameters which are assigned to static variables as to provide easily accessible data to relative state modules.
 

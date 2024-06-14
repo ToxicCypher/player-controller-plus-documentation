@@ -1,5 +1,3 @@
-/\*<!\[CDATA\[\*/ div.rbtoc1718320082150 {padding: 0px;} div.rbtoc1718320082150 ul {list-style: none;margin-left: 0px;} div.rbtoc1718320082150 li {margin-left: 0px;padding-left: 0px;} /\*\]\]>\*/
-
 *   [State Details](#GroundedAdvanceState-StateDetails)
     *   [State Overview](#GroundedAdvanceState-StateOverview)
     *   [Entry Requirements](#GroundedAdvanceState-EntryRequirements)

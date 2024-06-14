@@ -1,5 +1,3 @@
-/\*<!\[CDATA\[\*/ div.rbtoc1718320114576 {padding: 0px;} div.rbtoc1718320114576 ul {list-style: none;margin-left: 0px;} div.rbtoc1718320114576 li {margin-left: 0px;padding-left: 0px;} /\*\]\]>\*/
-
 *   [Overview](#LegInverseKinematics(IK)-Overview)
     *   [Provided Feature](#LegInverseKinematics(IK)-ProvidedFeature)
 *   [Leg IK Parameters](#LegInverseKinematics(IK)-LegIKParameters)
@@ -39,7 +37,7 @@ Hierarchical Requirements
 
 The Animation Rigging package from Unity requires that the Rig components be nested under the same parent as the Rig game object, see image below.
 
-![image-20240417-004617.png](attachments/3112962/10715188.png?width=443)
+![image-20240417-004617.png](../docutils/attachments//3112962/10715188.png?width=443)
 
 Game Objects & Components
 =========================
@@ -60,13 +58,13 @@ Each of the mentioned events must be passed a string which tell the Animation Ev
 
 All other event parameters are ignored.
 
-![image-20240417-005104.png](attachments/3112962/10551322.png?width=760)
+![image-20240417-005104.png](../docutils/attachments//3112962/10551322.png?width=760)
 
 #### Bone Renderer \[Optional\]
 
 The **Bone Renderer** component is used to display the character Rig, which allows for Rig components to become selectable within the Scene view.
 
-![image-20240417-003548.png](attachments/3112962/10813498.png?width=760)
+![image-20240417-003548.png](../docutils/attachments//3112962/10813498.png?width=760)
 
 ### Nested Game Objects
 
@@ -80,7 +78,7 @@ Each legs remaining components are divided into two sections, one for the left l
 
 If the Rig is changed, you can quickly configure the Two Bone IK Constraint component by providing a value for the Tip parameter, right clicking on the header of the Two Bone IK Constraint component and selecting the “Auto Setup from Tip Transform option”. Doing this will automatically fill in the remaining bone transforms.
 
-![image-20240417-010236.png](attachments/3112962/10813522.png?width=499)
+![image-20240417-010236.png](../docutils/attachments//3112962/10813522.png?width=499)
 
 #### Left | Right Leg Target
 
@@ -88,13 +86,13 @@ The leg target is used to tell the player Rig where to place it’s foot. Adjust
 
 While in play mode, the target will be continuously adjusting its position based on the location of the foot bone, assuming Leg IK is in an active state.
 
-![image-20240417-011325.png](attachments/3112962/10485835.png?width=760)
+![image-20240417-011325.png](../docutils/attachments//3112962/10485835.png?width=760)
 
 #### Left | Right Leg Hint
 
 The leg hint is simply used to help guide the direction that the knee should move towards when the legs are bending as a result of Leg IK activity. The hint object should be placed approximately 0.5 units in the direction of the players forward.
 
-![image-20240417-011452.png](attachments/3112962/10780742.png?width=319)
+![image-20240417-011452.png](../docutils/attachments//3112962/10780742.png?width=319)
 
 #### Left | Right Controller
 
@@ -102,4 +100,4 @@ Depending on the lateral side the leg is on, there is a Right Foot IK Controller
 
 The Controller object is what drives the core functionality of the Leg IK system. The controller should be positioned slightly above the ground, near the characters ankle. This object contains a script which houses the configuration for how users would like the Leg IK system to behave. For more information regarding these parameters, please see the Leg IK Parameters section.
 
-![image-20240417-012229.png](attachments/3112962/10485845.png?width=491)
+![image-20240417-012229.png](../docutils/attachments//3112962/10485845.png?width=491)

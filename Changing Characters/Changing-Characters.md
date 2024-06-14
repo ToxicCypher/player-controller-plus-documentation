@@ -1,5 +1,3 @@
-/\*<!\[CDATA\[\*/ div.rbtoc1718320106430 {padding: 0px;} div.rbtoc1718320106430 ul {list-style: none;margin-left: 0px;} div.rbtoc1718320106430 li {margin-left: 0px;padding-left: 0px;} /\*\]\]>\*/
-
 *   [Overview](#ChangingCharacters-Overview)
 *   [Character Model Swapping](#ChangingCharacters-CharacterModelSwapping)
     *   [Inverse Kinematics Character Controller](#ChangingCharacters-InverseKinematicsCharacterController)
@@ -24,7 +22,7 @@ Assuming you have a fully rigged model and have imported the model into your pro
 3.  Next we can simply edit the prefab and drop your character model under the root Game Object of the prefab. At this point, your project should look similar to the image below. The only difference should be that your provided character appears where Human (Baal) once was.
     
 
-![image-20240416-223132.png](attachments/65554/10682369.png?width=760)
+![image-20240416-223132.png](../docutils/attachments//65554/10682369.png?width=760)
 
 4.  If your character was imported with an animator, now is the time to remove it as we source our animations from the root Character Controller game object and the **Character Controller Plus** package already has one setup for you.
     
@@ -33,12 +31,12 @@ Assuming you have a fully rigged model and have imported the model into your pro
     1.  If you choose to continue to use the provided **Rig**, the correct Root node to select is the “metarig/spine” bone.
         
 
-![image-20240416-223943.png](attachments/65554/10649603.png?width=760)
+![image-20240416-223943.png](../docutils/attachments//65554/10649603.png?width=760)
 
 6.  Now, select the root Character Controller and navigate to the Animator component in the inspector. Update the Avatar configuration with your newly created Avatar.
     
 
-![image-20240416-224114.png](attachments/65554/10878977.png?width=760)
+![image-20240416-224114.png](../docutils/attachments//65554/10878977.png?width=760)
 
 7.  At this point you can drop your character into your scene and hit play. Your Character should be fully animated and may require some needed adjustments like updating the character position to fit within the bounds of the Character Controller along with some potential changes to your state configuration(s). It may require some tweaking to get things just right. Please consult [State Definition](State-Definitions_131196.md) documentation for more information regarding further **Character Controller Plus** configuration topics.
     
@@ -52,7 +50,7 @@ If you choose to not use the IK setup by either using the non-IK prefab or by si
 *   Remove the animations events from each of the animations that are reporting the missing receiver issue.
     
 
-![image-20240327-040428.png](attachments/65554/3801123.png?width=760)
+![image-20240327-040428.png](../docutils/attachments//65554/3801123.png?width=760)
 
 *   Add the AnimationEventIKHandler script to the root Character Controller game object. This will allow the animation events to be consumed but will not do anything as there are no IK components to interact with, this of course will minimally impact performance for no apparent gain, so it is best to just remove the animation events.
     
@@ -64,4 +62,4 @@ If you wish to create your own custom animations you will need to be sure that e
 
 If you prefer to use **Mixamo** to rig your models, you can simply import the FBX you download from **Mixamo** into your preferred modeling/animating software and edit your animations this way, that way you can ensure that your animation files follow the same rig/bone structure as the animation files provided with the demo character (Dark Bot).
 
-![image-20240327-031946.png](attachments/65554/3768340.png?width=760)
+![image-20240327-031946.png](../docutils/attachments//65554/3768340.png?width=760)

@@ -1,5 +1,3 @@
-/\*<!\[CDATA\[\*/ div.rbtoc1718320110331 {padding: 0px;} div.rbtoc1718320110331 ul {list-style: none;margin-left: 0px;} div.rbtoc1718320110331 li {margin-left: 0px;padding-left: 0px;} /\*\]\]>\*/
-
 *   [Overview](#Hand&ArmInverseKinematics(IK)-Overview)
     *   [Limitations](#Hand&ArmInverseKinematics(IK)-Limitations)
     *   [Provided Feature](#Hand&ArmInverseKinematics(IK)-ProvidedFeature)
@@ -45,7 +43,7 @@ Hierarchical Requirements
 
 The Animation Rigging package from Unity requires that the Rig components be nested under the same parent as the Rig game object, see image below.
 
-![image-20240418-011216.png](attachments/3211266/11730946.png?width=443)
+![image-20240418-011216.png](../docutils/attachments//3211266/11730946.png?width=443)
 
 Game Objects & Components
 =========================
@@ -60,7 +58,7 @@ The **Rig Builder** object is a component added to the root Game Object which is
 
 The **Bone Renderer** component is used to display the character Rig, which allows for Rig components to become selectable within the Scene view.
 
-![image-20240417-003548.png](attachments/3211266/11403310.png?width=760)
+![image-20240417-003548.png](../docutils/attachments//3211266/11403310.png?width=760)
 
 ### Nested Game Objects
 
@@ -74,23 +72,23 @@ Each arms remaining components are divided into two sections, one for the left a
 
 If the Rig is changed, you can quickly configure the Two Bone IK Constraint component by providing a value for the Tip parameter, right clicking on the header of the Two Bone IK Constraint component and selecting the “Auto Setup from Tip Transform option”. Doing this will automatically fill in the remaining bone transforms.
 
-![image-20240418-004852.png](attachments/3211266/11501613.png?width=493)
+![image-20240418-004852.png](../docutils/attachments//3211266/11501613.png?width=493)
 
 This component also contains a Multi-Rotation Constraint which is responsible for handling the rotation of the source object or in this case, the Left | Right Arm\_target.
 
-![image-20240418-005115.png](attachments/3211266/11534369.png?width=493)
+![image-20240418-005115.png](../docutils/attachments//3211266/11534369.png?width=493)
 
 #### Left | Right Arm Target
 
 The arm target is used to tell the player Rig where to place it’s hand. Adjust the location of this game object to sit within the reach of the arms of the character. The decided position will dictate the location and distance that the player will reach their hands out to.
 
-![image-20240418-005526.png](attachments/3211266/11534376.png?width=760)
+![image-20240418-005526.png](../docutils/attachments//3211266/11534376.png?width=760)
 
 #### Left | Right Arm Hint
 
 The arm hint is simply used to help guide the direction that the elbows should move towards when the arms are bending as a result of Arm IK activity.
 
-![image-20240418-010348.png](attachments/3211266/11239454.png?width=760)
+![image-20240418-010348.png](../docutils/attachments//3211266/11239454.png?width=760)
 
 #### Left | Right Controller
 
@@ -98,10 +96,10 @@ The Controller object is what drives the core functionality of the Hand & Arm IK
 
 The positioning of the Controller Game Object is crucial to the accuracy of your Hand & Arm IK setup. This is due to the fact that the raycasts that detect when Hand & Arm IK should be active, originate from this object. The number of raycasts, origins of raycasts and directions of raycasts can be manipulated directly from the Hand IK Controller component by providing equal parts Origins and Directions vectors.
 
-![image-20240418-010955.png](attachments/3211266/11305006.png?width=496)
+![image-20240418-010955.png](../docutils/attachments//3211266/11305006.png?width=496)
 
 This object contains a script which houses the configuration for how users would like the Arm IK system to behave. For more information regarding these parameters, please see the Arm IK Parameters section.
 
-![image-20240418-010703.png](attachments/3211266/11239460.png?width=730)
+![image-20240418-010703.png](../docutils/attachments//3211266/11239460.png?width=730)
 
-![image-20240418-010502.png](attachments/3211266/11534383.png?width=493)
+![image-20240418-010502.png](../docutils/attachments//3211266/11534383.png?width=493)

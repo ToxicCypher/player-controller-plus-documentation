@@ -1,5 +1,3 @@
-/\*<!\[CDATA\[\*/ div.rbtoc1718320090572 {padding: 0px;} div.rbtoc1718320090572 ul {list-style: none;margin-left: 0px;} div.rbtoc1718320090572 li {margin-left: 0px;padding-left: 0px;} /\*\]\]>\*/
-
 *   [State Details](#ClimbingState-StateDetails)
     *   [State Overview](#ClimbingState-StateOverview)
     *   [Entry Requirements](#ClimbingState-EntryRequirements)
@@ -60,7 +58,7 @@ The interval climb feature is a togglable feature that allows the end user to al
 
 The animation events are titled simply as **AtFootOfClimb** and **NotAtFootOfClimb**. When the player should be move normally, place the event **AtFootOfClimb** and when the player should have movement altered, place the event **NotAtFootOfClimb**. This feature is not applied when the player is considered to be idle when climbing.
 
-![image-20240330-042937.png](attachments/5963778/6455353.png?width=760)![image-20240330-183027.png](attachments/5963778/6455365.png?width=764)
+![image-20240330-042937.png](../docutils/attachments//5963778/6455353.png?width=760)![image-20240330-183027.png](../docutils/attachments//5963778/6455365.png?width=764)
 
 Assuming the Enable Interval Climb parameter is true, when the **AtFootOfClimb** is triggered, the parameters Climbing Speed Interval Min and Smooth Speed Interval Min are used to determine player movement. When the **NotAtFootOfClimb** is triggered, the parameters Climbing Speed Interval Max and Smooth Speed Interval Max are used to determine player movement.
 
@@ -76,7 +74,7 @@ Ledge climbing allows for the player to seemingly climb over a ledge when the ap
 
 The ledge climbing animation will be used when this feature is enabled, using the Ledge Climbing animation node rather than the Ledge Jumping animation node.
 
-![image-20240330-183603.png](attachments/5963778/6684677.png?width=534)
+![image-20240330-183603.png](../docutils/attachments//5963778/6684677.png?width=534)
 
 ### Ledge Jumping
 
@@ -87,15 +85,3 @@ The ledge jumping animation will be used when this feature is enabled, using the
 ### Climbing Guard Rails
 
 Climbing guard rails are a feature that can be enabled by setting the Apply Climbing Guard Rails parameter to true, which will stop the player from climbing off of the sides of a climbable surface. This feature can be configured to set a distance on both sides of the player where guard rails will be applied to fit your specific climbing needs.
-
-| 
-#### Climbing Gallery
-
- |
-| --- |
-| ![](attachments/thumbnails/5963778/6160475) | ![](attachments/thumbnails/5963778/6127641) |
-| 
-
- | 
-
- |

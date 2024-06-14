@@ -1,4 +1,3 @@
-/\*<!\[CDATA\[\*/ div.rbtoc1718320075119 {padding: 0px;} div.rbtoc1718320075119 ul {list-style: none;margin-left: 0px;} div.rbtoc1718320075119 li {margin-left: 0px;padding-left: 0px;} /\*\]\]>\*/
 
 *   [State Details](#FallingToSplatState-StateDetails)
     *   [State Overview](#FallingToSplatState-StateOverview)
