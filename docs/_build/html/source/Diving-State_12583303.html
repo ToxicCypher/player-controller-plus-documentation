@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>State Details &#8212; Player Controller Plus 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=12dfc556" />
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <p>/*&lt;![CDATA[*/ div.rbtoc1718320102676 {padding: 0px;} div.rbtoc1718320102676 ul {list-style: none;margin-left: 0px;} div.rbtoc1718320102676 li {margin-left: 0px;padding-left: 0px;} /*]]&gt;*/</p>
+<ul class="simple">
+<li><p><a class="reference external" href="#DivingState-StateDetails">State Details</a></p>
+<ul>
+<li><p><a class="reference external" href="#DivingState-StateOverview">State Overview</a></p></li>
+<li><p><a class="reference external" href="#DivingState-EntryRequirements">Entry Requirements</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#DivingState-Parameters">Parameters</a></p>
+<ul>
+<li><p><a class="reference external" href="#DivingState-BaseStateParameters">Base State Parameters</a></p></li>
+<li><p><a class="reference external" href="#DivingState-StateSpecificParameters">State Specific Parameters</a></p></li>
+</ul>
+</li>
+</ul>
+<section id="state-details">
+<h1>State Details<a class="headerlink" href="#state-details" title="Link to this heading">¶</a></h1>
+<section id="state-overview">
+<h2>State Overview<a class="headerlink" href="#state-overview" title="Link to this heading">¶</a></h2>
+<p>The Diving state sends the player downward into an object that is specified in the swimmable layer mask. The player will shoot downwards until smoothly coming to a stop and ascending back to the surface. This state will also be exited if a surface is detected mid-dive, causing the player to return to the surface.</p>
+<p>When attempting to dive from a Swimming state, surrounding checks are in place to detect surfaces that are too close to the player that may interfere with the dive. These surrounding checks can be configured to be less or more constrained by configuring the Dive Check Settings parameters in the Swimming state configuration.</p>
+</section>
+<section id="entry-requirements">
+<h2>Entry Requirements<a class="headerlink" href="#entry-requirements" title="Link to this heading">¶</a></h2>
+<p>To enter a Diving state, the player must be in a Swimming state along the surface of the Swimmable object. The player must press the dive input which is set in the Player Input System configuration to begin the dive.</p>
+</section>
+</section>
+<section id="parameters">
+<h1>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">¶</a></h1>
+<p>All parameters listed below have detailed Tooltips in the Unity Editor.</p>
+<section id="base-state-parameters">
+<h2>Base State Parameters<a class="headerlink" href="#base-state-parameters" title="Link to this heading">¶</a></h2>
+<p>These state does not contain any state specific base state parameters.</p>
+</section>
+<section id="state-specific-parameters">
+<h2>State Specific Parameters<a class="headerlink" href="#state-specific-parameters" title="Link to this heading">¶</a></h2>
+<p>This table defines configurable parameters that are utilized solely by this state.</p>
+<table data-table-width="1382" data-layout="default" data-local-id="42844ded-fd04-45a2-9151-655070fb6892" class="confluenceTable"><colgroup><col style="width: 220.0px;"><col style="width: 100.0px;"><col style="width: 198.0px;"><col style="width: 864.0px;"></colgroup><tbody><tr><th class="confluenceTh"><p><strong>Parameter</strong></p></th><th class="confluenceTh"><p><strong>Data Type</strong></p></th><th class="confluenceTh"><p><strong>Header</strong></p></th><th class="confluenceTh"><p><strong>Details</strong></p></th></tr><tr><td class="confluenceTd"><p>Diving Speed</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Movement Variables</p></td><td class="confluenceTd"><p>The movement speed applied in this state.</p></td></tr><tr><td class="confluenceTd"><p>Smooth Speed</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Movement Variables</p></td><td class="confluenceTd"><p>The movement smoothing speed applied in this state.</p></td></tr><tr><td class="confluenceTd"><p>Gravity Smooth Speed</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Gravity Variables</p></td><td class="confluenceTd"><p>The speed at which gravity is decreased. This variable is used to slow the dive until the maximum depth is reached or a surface is detected, in which the player will begin to rise back to the surface.</p></td></tr><tr><td class="confluenceTd"><p>Rotation Speed</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Rotation Variables</p></td><td class="confluenceTd"><p>The rotation speed applied in this state.</p></td></tr></tbody></table></section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Player Controller Plus</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Toxic Cypher Games.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../_sources/source/Diving-State_12583303.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

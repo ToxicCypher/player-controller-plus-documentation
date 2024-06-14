@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>State Details &#8212; Player Controller Plus 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=12dfc556" />
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <p>/*&lt;![CDATA[*/ div.rbtoc1718320090572 {padding: 0px;} div.rbtoc1718320090572 ul {list-style: none;margin-left: 0px;} div.rbtoc1718320090572 li {margin-left: 0px;padding-left: 0px;} /*]]&gt;*/</p>
+<ul class="simple">
+<li><p><a class="reference external" href="#ClimbingState-StateDetails">State Details</a></p>
+<ul>
+<li><p><a class="reference external" href="#ClimbingState-StateOverview">State Overview</a></p></li>
+<li><p><a class="reference external" href="#ClimbingState-EntryRequirements">Entry Requirements</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#ClimbingState-Parameters">Parameters</a></p>
+<ul>
+<li><p><a class="reference external" href="#ClimbingState-BaseStateParameters">Base State Parameters</a></p></li>
+<li><p><a class="reference external" href="#ClimbingState-StateSpecificParameters">State Specific Parameters</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#ClimbingState-GeneralUsage">General Usage</a></p>
+<ul>
+<li><p><a class="reference external" href="#ClimbingState-DefiningClimbableSurfaces">Defining Climbable Surfaces</a></p></li>
+<li><p><a class="reference external" href="#ClimbingState-IntervalClimb">Interval Climb</a></p></li>
+<li><p><a class="reference external" href="#ClimbingState-ClimbJumping">Climb Jumping</a></p></li>
+<li><p><a class="reference external" href="#ClimbingState-LedgeClimbing">Ledge Climbing</a></p></li>
+<li><p><a class="reference external" href="#ClimbingState-LedgeJumping">Ledge Jumping</a></p></li>
+<li><p><a class="reference external" href="#ClimbingState-ClimbingGuardRails">Climbing Guard Rails</a></p>
+<ul>
+<li><p>Climbing Gallery</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<section id="state-details">
+<h1>State Details<a class="headerlink" href="#state-details" title="Link to this heading">¶</a></h1>
+<section id="state-overview">
+<h2>State Overview<a class="headerlink" href="#state-overview" title="Link to this heading">¶</a></h2>
+<p>This state is used to scale over objects that have been configured in your scenes that are assigned to a layer that is configured to detect climbable surfaces. This state allows traversal over surfaces that are not walkable in an omni-directional fashion.</p>
+</section>
+<section id="entry-requirements">
+<h2>Entry Requirements<a class="headerlink" href="#entry-requirements" title="Link to this heading">¶</a></h2>
+<p>This state can be entered from multiple states that include airborne states, grounded states and aquatic states. The player can transition to a climbing state only when a climbable surface is detected, what a climbable surface is, is completely definable by the developer.</p>
+</section>
+</section>
+<section id="parameters">
+<h1>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">¶</a></h1>
+<p>All parameters listed below have detailed Tooltips in the Unity Editor.</p>
+<section id="base-state-parameters">
+<h2>Base State Parameters<a class="headerlink" href="#base-state-parameters" title="Link to this heading">¶</a></h2>
+<p>This table defines configurable parameters that are related to this state but are shared between multiple states.</p>
+<table data-table-width="1382" data-layout="default" data-local-id="ba3f828a-f7ee-489c-87b3-cc7749cdfdcd" class="confluenceTable"><colgroup><col style="width: 219.0px;"><col style="width: 105.0px;"><col style="width: 198.0px;"><col style="width: 860.0px;"></colgroup><tbody><tr><th class="confluenceTh"><p><strong>Parameter</strong></p></th><th class="confluenceTh"><p><strong>Data Type</strong></p></th><th class="confluenceTh"><p><strong>Header</strong></p></th><th class="confluenceTh"><p><strong>Details</strong></p></th></tr><tr><td class="confluenceTd"><p>Ledge Check Layer Mask</p></td><td class="confluenceTd"><p>LayerMask</p></td><td class="confluenceTd"><p>Climbing Check Settings</p></td><td class="confluenceTd"><p>Used to supply states that can be used to detect ledges when climbing. Ledges can be defined as the peaks of climbable surfaces.</p></td></tr><tr><td class="confluenceTd"><p>Climb Check Layer Mask</p></td><td class="confluenceTd"><p>LayerMask</p></td><td class="confluenceTd"><p>Climbing Check Settings</p></td><td class="confluenceTd"><p>Used to supply states that can be detected as climbable surfaces.</p></td></tr><tr><td class="confluenceTd"><p>Climb Check Distance</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Climbing Check Settings</p></td><td class="confluenceTd"><p>The distance from the player where climbable surfaces will be detected.</p></td></tr><tr><td class="confluenceTd"><p>Climb Check Origin Offset</p></td><td class="confluenceTd"><p>Vector3</p></td><td class="confluenceTd"><p>Climbing Check Settings</p></td><td class="confluenceTd"><p>The offset from the players origin that the climb check raycast originates from. This is used after the initial check has detected a climbable surface.</p></td></tr><tr><td class="confluenceTd"><p>Initial Climb Check Origin Offset</p></td><td class="confluenceTd"><p>Vector3</p></td><td class="confluenceTd"><p>Climbing Check Settings</p></td><td class="confluenceTd"><p>The offset from the players origin that the climb check raycast originates from. This is used for the initial check.</p></td></tr></tbody></table></section>
+<section id="state-specific-parameters">
+<h2>State Specific Parameters<a class="headerlink" href="#state-specific-parameters" title="Link to this heading">¶</a></h2>
+<p>This table defines configurable parameters that are utilized solely by this state.</p>
+<table data-table-width="1382" data-layout="default" data-local-id="42844ded-fd04-45a2-9151-655070fb6892" class="confluenceTable"><colgroup><col style="width: 220.0px;"><col style="width: 100.0px;"><col style="width: 198.0px;"><col style="width: 864.0px;"></colgroup><tbody><tr><th class="confluenceTh"><p><strong>Parameter</strong></p></th><th class="confluenceTh"><p><strong>Data Type</strong></p></th><th class="confluenceTh"><p><strong>Header</strong></p></th><th class="confluenceTh"><p><strong>Details</strong></p></th></tr><tr><td class="confluenceTd"><p>Climbing Speed</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Movement Variables</p></td><td class="confluenceTd"><p>The movement speed applied in this state.</p></td></tr><tr><td class="confluenceTd"><p>Smooth Speed</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Movement Variables</p></td><td class="confluenceTd"><p>The movement smoothing speed applied in this state.</p></td></tr><tr><td class="confluenceTd"><p>Enable Interval Climb</p></td><td class="confluenceTd"><p>bool</p></td><td class="confluenceTd"><p>Interval Climb Variables</p></td><td class="confluenceTd"><p>When true, interval climb is enabled.</p></td></tr><tr><td class="confluenceTd"><p>Climbing Speed Interval Max</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Interval Climb Variables</p></td><td class="confluenceTd"><p>The maximum movement speed applied when climbing inside of the climb interval.</p></td></tr><tr><td class="confluenceTd"><p>Climbing Speed Interval Min</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Interval Climb Variables</p></td><td class="confluenceTd"><p>The maximum movement speed applied when climbing outside of the climb interval.</p></td></tr><tr><td class="confluenceTd"><p>Smooth Speed Interval Max</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Interval Climb Variables</p></td><td class="confluenceTd"><p>The movement smoothing speed applied in this state while inside of the climb interval.</p></td></tr><tr><td class="confluenceTd"><p>Smooth Speed Interval Min</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Interval Climb Variables</p></td><td class="confluenceTd"><p>The movement smoothing speed applied in this state while outside of the climb interval.</p></td></tr><tr><td class="confluenceTd"><p>Jump Height From Climb</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Jump Variables</p></td><td class="confluenceTd"><p>The jump height applied from this state.</p></td></tr><tr><td class="confluenceTd"><p>Jump Time From Climb</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Jump Variables</p></td><td class="confluenceTd"><p>The jump duration applied from this state.</p></td></tr><tr><td class="confluenceTd"><p>Climbing Jump Strength</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Jump Variables</p></td><td class="confluenceTd"><p>The strength applied to the jump.</p></td></tr><tr><td class="confluenceTd"><p>Can Jump From Climb</p></td><td class="confluenceTd"><p>bool</p></td><td class="confluenceTd"><p>Jump Variables</p></td><td class="confluenceTd"><p>Allow the player to jump from wall while climbing.</p></td></tr><tr><td class="confluenceTd"><p>Rotation Speed</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Rotation Variables</p></td><td class="confluenceTd"><p>The rotation speed applied in this state.</p></td></tr><tr><td class="confluenceTd"><p>Gravity</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Gravity Variables</p></td><td class="confluenceTd"><p>The gravity applied in this state.</p></td></tr><tr><td class="confluenceTd"><p>Gravity Multiplier</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Gravity Variables</p></td><td class="confluenceTd"><p>The gravity multiplier applied in this state.</p></td></tr><tr><td class="confluenceTd"><p>Auto Camera Follow</p></td><td class="confluenceTd"><p>bool</p></td><td class="confluenceTd"><p>Climbing Settings</p></td><td class="confluenceTd"><p>Allow the camera to automatically follow the player while climbing.</p></td></tr><tr><td class="confluenceTd"><p>Reset Current Speed</p></td><td class="confluenceTd"><p>bool</p></td><td class="confluenceTd"><p>Climbing Settings</p></td><td class="confluenceTd"><p>Reset the players current speed when entering a Climbing state.</p></td></tr><tr><td class="confluenceTd"><p>Apply Climbing Guard Rails</p></td><td class="confluenceTd"><p>bool</p></td><td class="confluenceTd"><p>Climbing Settings</p></td><td class="confluenceTd"><p>If true, climbing guard rails are applied.</p></td></tr><tr><td class="confluenceTd"><p>Climbing Guard Rails Width</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Climbing Settings</p></td><td class="confluenceTd"><p>The distance from the player origin to check if the sides of the climb is no longer detecting a scalable.</p></td></tr><tr><td class="confluenceTd"><p>Climb Tilt Speed</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Climbing Settings</p></td><td class="confluenceTd"><p>The speed at which the player rotates depending on the contour of the climbable object.</p></td></tr><tr><td class="confluenceTd"><p>Allow Ledge Climb</p></td><td class="confluenceTd"><p>bool</p></td><td class="confluenceTd"><p>Ledge Climb Settings</p></td><td class="confluenceTd"><p>If true, the player will climb over ledges while in a climbing state. When false, the player jumps over the ledge.</p></td></tr><tr><td class="confluenceTd"><p>Ledge Check Distance</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Ledge Climb Settings</p></td><td class="confluenceTd"><p>The distance in front of the player that ledges will be checked for.</p></td></tr><tr><td class="confluenceTd"><p>Ledge Check Height</p></td><td class="confluenceTd"><p>float</p></td><td class="confluenceTd"><p>Ledge Climb Settings</p></td><td class="confluenceTd"><p>The distance downward to look for a ledge. In other words, the length of the downward raycast that detects ledges.</p></td></tr></tbody></table></section>
+</section>
+<section id="general-usage">
+<h1>General Usage<a class="headerlink" href="#general-usage" title="Link to this heading">¶</a></h1>
+<p>This section covers some general usage topics for this state.</p>
+<section id="defining-climbable-surfaces">
+<h2>Defining Climbable Surfaces<a class="headerlink" href="#defining-climbable-surfaces" title="Link to this heading">¶</a></h2>
+<p>To define a climbable surface, the developer will need to supply the in-scene Game Object to the layer of their choice. This layer must then be added to the Climb Check Layer Mask parameter.</p>
+</section>
+<section id="interval-climb">
+<h2>Interval Climb<a class="headerlink" href="#interval-climb" title="Link to this heading">¶</a></h2>
+<p>The interval climb feature is a togglable feature that allows the end user to align the movement speeds of the character to better follow the movements that the animation might represent. This feature requires the end user to supply animation events to the climbing animations that will tell the <strong>Player Controller Plus</strong> framework to adjust the movements of the player.</p>
+<p>The animation events are titled simply as <strong>AtFootOfClimb</strong> and <strong>NotAtFootOfClimb</strong>. When the player should be move normally, place the event <strong>AtFootOfClimb</strong> and when the player should have movement altered, place the event <strong>NotAtFootOfClimb</strong>. This feature is not applied when the player is considered to be idle when climbing.</p>
+<p><img alt="image-20240330-042937.png" src="source/attachments/5963778/6455353.png?width=760" /><img alt="image-20240330-183027.png" src="source/attachments/5963778/6455365.png?width=764" /></p>
+<p>Assuming the Enable Interval Climb parameter is true, when the <strong>AtFootOfClimb</strong> is triggered, the parameters Climbing Speed Interval Min and Smooth Speed Interval Min are used to determine player movement. When the <strong>NotAtFootOfClimb</strong> is triggered, the parameters Climbing Speed Interval Max and Smooth Speed Interval Max are used to determine player movement.</p>
+<p>To use consistent movement disable the interval climb feature by setting the Enable Interval Climb parameter to false.</p>
+</section>
+<section id="climb-jumping">
+<h2>Climb Jumping<a class="headerlink" href="#climb-jumping" title="Link to this heading">¶</a></h2>
+<p>Climb jumping allows for the player to jump from a climb while in a climbing state. To enable/disable this ability, toggle the Can Jump From Climb parameter.</p>
+</section>
+<section id="ledge-climbing">
+<h2>Ledge Climbing<a class="headerlink" href="#ledge-climbing" title="Link to this heading">¶</a></h2>
+<p>Ledge climbing allows for the player to seemingly climb over a ledge when the apex of a climb has been reached and a ledge is detected. To enable the ledge climbing feature, set the Allow Ledge Climb parameter to true.</p>
+<p>The ledge climbing animation will be used when this feature is enabled, using the Ledge Climbing animation node rather than the Ledge Jumping animation node.</p>
+<p><img alt="image-20240330-183603.png" src="source/attachments/5963778/6684677.png?width=534" /></p>
+</section>
+<section id="ledge-jumping">
+<h2>Ledge Jumping<a class="headerlink" href="#ledge-jumping" title="Link to this heading">¶</a></h2>
+<p>Ledge jumping allows for the player to hop over a ledge at the apex of a climb rather than climb over, a behavior typically seen in retro 3D platformers such as Banjo Kazooie. To enable the ledge jumping feature, set the Allow Ledge Climb parameter to false.</p>
+<p>The ledge jumping animation will be used when this feature is enabled, using the Ledge Jumping animation node rather than the Ledge Climbing animation node.</p>
+</section>
+<section id="climbing-guard-rails">
+<h2>Climbing Guard Rails<a class="headerlink" href="#climbing-guard-rails" title="Link to this heading">¶</a></h2>
+<p>Climbing guard rails are a feature that can be enabled by setting the Apply Climbing Guard Rails parameter to true, which will stop the player from climbing off of the sides of a climbable surface. This feature can be configured to set a distance on both sides of the player where guard rails will be applied to fit your specific climbing needs.</p>
+<p>|</p>
+<section id="climbing-gallery">
+<h3>Climbing Gallery<a class="headerlink" href="#climbing-gallery" title="Link to this heading">¶</a></h3>
+<p>|
+| — |
+| <img alt="../_images/6160475" src="../_images/6160475" /> | <img alt="../_images/6127641" src="../_images/6127641" /> |
+|</p>
+<p>|</p>
+<p>|</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Player Controller Plus</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Toxic Cypher Games.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../_sources/source/Climbing-State_5963778.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
